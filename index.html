@@ -1,96 +1,80 @@
 <!doctype html>
 
-  <html>
+<html>
+    <head>
+        <meta charset="utf-8">
 
-  <head>
+        <title>GitHub Organizations Explore</title>
 
-    <meta charset="utf-8">
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
 
-    <title>GitHub Organizations Explorer</title>
+    </head>
 
-    <!-- Load external CSS styles -->
-    <link rel="stylesheet" href="styles.css">
+    <body>
 
-  </head>
+<h1>GitHub Organizations Explorer</h1>
+<style>
+html {
+    height: 100%;
+    background-color: #2874A6;
+}
+h1{
+  background-color: #2874A6;
+  color: white;
+  height: 50px; 
+  position: absolute;
+  right: 700px;
+}
+body {
+    height: 100%;
+    top: 100px;
+    background-color: #ECF0F1;
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+.right {
+  position: absolute;
+  right: 350px;
 
-  <body>
+}
+.left {
+  position: absolute;
+  left: 250px;
+}
+.center {
+  position: absolute;
+  right: 700px;
+}
+.button{
+    position: absolute;
+    right: 250px;
+    background-color: #21618C;
+}
+</style>
+<form action="https://github.com/search?o=desc&q=abcd&s=forks&type=Repositories" target="_blank">
+  <div class = "left">
+  <label for="org">Organization:</label>
+  <input type='text' list='listid' id="org" name="org" placeholder="Organization Name" required>
+ <datalist id='listid'>
+   <option label='Google' value='google'>
+   <option label='Facebook' value='facebook'>
+   <option label='Microsoft' value='microsoft'>
+</datalist>
+</div>
+  <div class = "center">
+  <label for="n">N (Top Repos):</label>
+  <input type="number" id="n" name="n" value = "1" placeholder="N (Top Repos)" required>
+  </div>
+  <div class = "right">  
+  <label for="m">M (Oldest Forks):</label>
+  <input type="number" id="m" name="m" value = "1" placeholder="M (Oldest Forks)" required>
+  </div>
+  <div class = "button">
+  <input type="submit" value="Submit" onClick="javascript: window.open('https://github.com/search?o=desc&q=' + document.getElementById('org').value + '&s=forks&type=Repositories');" />>
+  </div>
+</form>
 
-  <h1>GitHub Organizations Explorer</h1>
+</body>
 
-  <style>
-
-    html {
-      height: 100%;
-      background-color: #2874A6;
-
-    }
-    h1{
-      background-color: #2874A6;
-      color: white;
-      height: 50px; 
-      text-align: center;
-
-    }
-    body {
-      height: 100%;
-      top: 100px;
-      background-color: #ECF0F1;
-      background-repeat: repeat-y;
-      background-size: 100%;
-    }
-    .h1{
-      position: absolute;
-      right: 700px;
-    }
-    .right {
-      position: absolute;
-      right: 350px;
-
-    }
-    .left {
-      position: absolute;
-      left: 250px;
-    }
-
-    .center {
-      position: absolute;
-      right: 700px;
-    }
-
-    .button{
-      position: absolute;
-      right: 250px;
-      background-color: #21618C;
-
-    }
-
-  </style>
-  <form action="https://github.com/search?o=desc&q=abcd&s=forks&type=Repositories" target="_blank">
-    <div class = "left">
-      <label for="org">Organization:</label>
-      <input type='text' list='listid' id="org" name="org" placeholder="Organization Name" required>
-      <datalist id='listid'>
-      <option label='Google' value='google'>
-      <option label='Facebook' value='facebook'>
-      <option label='Microsoft' value='microsoft'>
-      </datalist>
-    </div>
-    <div class = "center">
-      <label for="n">N (Top Repos):</label>
-      <input type="number" id="n" name="n" value = "1" placeholder="N (Top Repos)" required>
-
-    </div>
-    <div class = "right">  
-      <label for="m">M (Oldest Forks):</label>
-      <input type="number" id="m" name="m" value = "1" placeholder="M (Oldest Forks)" required>
-
-    </div>
-    <div class = "button">
-      <input type="submit" value="Submit" onClick="javascript: window.open('https://github.com/search?o=desc&q=' + document.getElementById('org').value + '&s=forks&type=Repositories');" />>
-
-    </div>
-  </form>
-
-  </body>
-
-  </html>
+</html>
